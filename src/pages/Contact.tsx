@@ -201,7 +201,7 @@ const Contact = () => {
                 </div>
 
                 <motion.div
-                    className="mt-auto pt-6"
+                  className="mt-auto pt-6"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -289,12 +289,23 @@ const Contact = () => {
                       className="w-full px-4 py-2 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                     >
                       <option value="">Choose a treatment</option>
+                      <option value="Root Canal Treatment">Root Canal Treatment</option>
                       <option value="Dental Implants">Dental Implants</option>
-                      <option value="Invisible Braces">Invisible Braces</option>
+                      <option value="Clear Aligners">Clear Aligners</option>
                       <option value="Smile Designing">Smile Designing</option>
-                      <option value="Root Canal">Root Canal</option>
+                      <option value="Tooth Extraction">Tooth Extraction</option>
+                      <option value="Scaling & Polishing">Scaling &amp; Polishing</option>
+                      <option value="Crowns & Bridges">Crowns &amp; Bridges</option>
+                      <option value="Dental Fillings">Dental Fillings</option>
                       <option value="Teeth Whitening">Teeth Whitening</option>
-                      <option value="General Checkup">General Checkup</option>
+                      <option value="Gum Surgery">Gum Surgery</option>
+                      <option value="Mouth Ulcer Treatment">Mouth Ulcer Treatment</option>
+                      <option value="Dentures">Dentures</option>
+                      <option value="General Oral Care">General Oral Care</option>
+                      <option value="Orthodontic Braces">Orthodontic Braces</option>
+                      <option value="Porcelain Veneers">Porcelain Veneers</option>
+                      <option value="Sensitive Teeth Treatment">Sensitive Teeth Treatment</option>
+                      <option value="Kids Dentistry">Kids Dentistry</option>
                       <option value="Other">Other</option>
                     </select>
                   </div>
