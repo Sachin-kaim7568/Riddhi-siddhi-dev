@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://riddhisiddhidentalhospital.com/sitemap.xml
