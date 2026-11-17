@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Smile, Award, Clock, Shield, ArrowRight, MapPin, Phone, Mail } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { Smile, Award, Clock, Shield, ArrowRight, MapPin, Phone, Mail, ChevronDown } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
 import SEO from "@/components/SEO";
 import TestimonialSlider from "@/components/TestimonialSlider";
@@ -56,7 +57,32 @@ import { services as allServices } from "@/data/services";
 // Get top 4 services for the home page to maintain design consistency
 const featuredServices = allServices.slice(0, 4);
 
+const faqs = [
+  {
+    question: "Where is Riddhi Siddhi Dental Hospital located?",
+    answer: "Riddhi Siddhi Dental Hospital is located in Vaishali Nagar, Jaipur, Rajasthan. Please refer to the contact section for the listed address and directions.",
+  },
+  {
+    question: "What dental treatments are available at the hospital?",
+    answer: "The website features root canal treatment, dental implants, clear aligners, and smile designing. You can explore the services section or contact the hospital to enquire about other available treatments.",
+  },
+  {
+    question: "How can I book a dental appointment?",
+    answer: "You can use the appointment or contact options on the website to enquire about scheduling a consultation.",
+  },
+  {
+    question: "How do I know which dental treatment I need?",
+    answer: "The appropriate treatment depends on your symptoms, oral health, and clinical assessment. A dental consultation can help you understand the available options.",
+  },
+  {
+    question: "Does the hospital provide clear aligner treatment?",
+    answer: "Clear aligners are listed among the hospital's services. Contact the clinic to discuss your alignment concerns and whether this option may be suitable for you.",
+  },
+];
+
 const Home = () => {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <div className="min-h-screen pt-16 md:pt-20 pb-8">
 <SEO
@@ -301,6 +327,69 @@ const Home = () => {
   </Link>
 </div>
           
+        </motion.section>
+
+        {/* FAQ */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary text-center mb-12">
+            Frequently Asked Questions About Dental Care
+          </h2>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {faqs.map((faq, index) => {
+              const isOpen = openFaq === index;
+              return (
+                <Card key={faq.question} className="shadow-soft overflow-hidden">
+                  <button
+                    type="button"
+                    onClick={() => setOpenFaq(isOpen ? null : index)}
+                    className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-heading font-semibold text-base md:text-lg text-primary">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-primary flex-shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-6 pb-5 text-muted-foreground leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </Card>
+              );
+            })}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link to="/contact">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full font-heading font-semibold transition-smooth shadow-medium"
+              >
+                Have More Questions? Contact Our Team
+              </motion.button>
+            </Link>
+          </div>
         </motion.section>
 
         {/* Contact CTA */}
