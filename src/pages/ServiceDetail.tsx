@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, CheckCircle2, ChevronDown } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ChevronDown, Phone } from "lucide-react";
 import { services } from "@/data/services";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -29,6 +29,9 @@ const ServiceDetail = () => {
   }
 
   const Icon = service.icon;
+  const sidebarButtons = service.buttons || [
+    { label: "Contact Us", href: "/contact", type: "link" as const },
+  ];
 
   return (
     <>
@@ -151,19 +154,46 @@ const ServiceDetail = () => {
             </div>
 
             {/* Right Sidebar */}
-                        <div className="space-y-6 lg:self-start lg:sticky lg:top-24">
+            <div className="space-y-6 lg:self-start lg:sticky lg:top-24">
               <Card className="p-6 shadow-soft">
-                                <h3 className="font-heading font-semibold text-xl text-primary mb-4">
+                <h3 className="font-heading font-semibold text-xl text-primary mb-4">
                   {service.sidebarHeading || "Book an Appointment"}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-6">
                   {service.sidebarText || "Ready to transform your smile? Schedule a consultation with Dr. Pooja Dhanopia today."}
                 </p>
-                <Link to="/contact" className="block">
-                  <Button className="w-full font-heading font-semibold shadow-medium h-12 text-lg">
-                    Contact Us
-                  </Button>
-                </Link>
+                <div className="space-y-4">
+                  {sidebarButtons.map((button, index) =>
+                    button.type === "phone" ? (
+                      <a key={index} href={button.href} className="block">
+                        <Button
+                          variant={index === 0 ? "default" : "outline"}
+                          className={
+                            index === 0
+                              ? "w-full font-heading font-semibold shadow-medium h-12 text-lg"
+                              : "w-full border-primary text-primary hover:bg-primary/5 h-12"
+                          }
+                        >
+                          <Phone className="w-4 h-4 mr-2" />
+                          {button.label}
+                        </Button>
+                      </a>
+                    ) : (
+                      <Link key={index} to={button.href} className="block">
+                        <Button
+                          variant={index === 0 ? "default" : "outline"}
+                          className={
+                            index === 0
+                              ? "w-full font-heading font-semibold shadow-medium h-12 text-lg"
+                              : "w-full border-primary text-primary hover:bg-primary/5 h-12"
+                          }
+                        >
+                          {button.label}
+                        </Button>
+                      </Link>
+                    )
+                  )}
+                </div>
               </Card>
 
               {/* Other Services */}
