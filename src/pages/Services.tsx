@@ -25,19 +25,18 @@ const Services = () => {
         <div className="container mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto mt-8 mb-16">
             <span className="bg-primary/10 text-primary font-semibold tracking-wider uppercase px-4 py-2 rounded-full text-sm inline-block mb-4">
-              Comprehensive Dental Treatments
+              Comprehensive Dental Care
             </span>
 
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-800 leading-tight mb-6 uppercase">
-              Advanced Dental Care For A Radiant Smile
+              Get your beautiful smile at Complete Dental Care in Jaipur
               <span className="block text-primary mt-2">
-                - Riddhi Siddhi Dental Hospital -
+                
               </span>
             </h1>
 
             <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
-              Delivering modern and pain-free dental treatments with exceptional precision, ensuring your optimal oral health and a beautiful, confident smile.
-            </p>
+             At Riddhi Siddhi Dental Hospital, Vaishali Nagar. We provide comprehensive dental services like general dentistry, root canal treatment, dental implants, orthodontic treatment (braces, clear aligner), smile designing etc. Our aim is to provide painless dental treatment with customized dental treatment to give you a healthy and confident smile.            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
