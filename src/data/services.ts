@@ -25,6 +25,7 @@ export interface Service {
   sidebarHeading?: string;
   sidebarText?: string;
   faqs?: { question: string; answer: string }[];
+  buttons?: { label: string; href: string; type?: "link" | "phone" }[];
 }
 
 export const services: Service[] = [
@@ -71,6 +72,9 @@ export const services: Service[] = [
         answer: "When looking for a root canal dentist in Jaipur look at their experience, what treatment they offer, what diagnostic equipment they have and how they treat their patients. At Riddhi Siddhi Dental Hospital in Vaishali Nagar, Jaipur our dental team can talk through your condition with you and help you find the right root canal treatment for you.",
       },
     ],
+    buttons: [
+      { label: "Contact Us", href: "/contact", type: "link" },
+    ],
     metaTitle: "Root Canal Dentist in Jaipur | Riddhi Siddhi Dental Hospital",
     metaDescription: "Looking for a root canal dentist in Jaipur? Riddhi Siddhi Dental Hospital can help you, explore treatment for an infected or painful tooth. Book today.",
   },
@@ -78,16 +82,48 @@ export const services: Service[] = [
     id: 2,
     slug: "dental-implants",
     title: "Dental Implants",
+    bannerTitle: "Dental Implants in Jaipur for a Natural-Looking, Confident Smile",
+    contentHeading: "Dental Implants in Jaipur",
+    benefitsHeading: "Why choose dental implants?",
+    sidebarHeading: "Book Your Dental Implant Consultation",
+    sidebarText: "When you are looking for a reliable way of replacing missing teeth, visit Riddhi Siddhi Dental Hospital located at Vaishali Nagar, Jaipur to get the right kind of dental implant treatment. Book your appointment now.",
     icon: Sparkles,
     image: serviceImplants,
     description: "Find out more about tooth replacement option using implants. This is after an assessment of your teeth.",
-    details: "Dental implants are titanium posts surgically placed into the jawbone to serve as artificial tooth roots. They provide a strong foundation for fixed or removable replacement teeth that match your natural teeth. Our implants are designed to last a lifetime with proper care.",
+    details: "We are offering dental implant treatment at Riddhi Siddhi Dental Hospital, Vaishali Nagar, Jaipur to replace lost teeth. A dental implant is a small titanium post inserted into your jawbone to hold replacement teeth such as crowns. Dental implants help to provide a firm base that can support natural looking replacement teeth. They can also help to keep your jawbone healthy. Our dental professionals will assess your mouth and bone health to recommend the best treatment option.",
     benefits: [
-      "Permanent and durable solution",
-      "Natural look and feel",
-      "Improved chewing and speech",
-      "Prevents bone loss",
-      "No damage to adjacent teeth",
+      "Long-lasting solution to replace your teeth if looked after properly",
+      "Aesthetically pleasing and comfortable",
+      "Improved chewing and speaking",
+      "Preserves your jaw bone",
+      "No need to reshape neighboring healthy teeth",
+      "Gives you a beautiful smile and boosts confidence.",
+    ],
+    faqs: [
+      {
+        question: "What are dental implants?",
+        answer: "Dental implants are artificial tooth roots made of Titanium. These are used to replace one or more missing teeth. These are suitable for patients who have had one or more teeth removed due to decay, gum disease, trauma or other dental issues. After an assessment by a dentist it can be determined if this is the correct treatment for you.",
+      },
+      {
+        question: "Are dental implants painful?",
+        answer: "Treatment for dental implants is usually completed under local anaesthetic. Patients may feel a little pain, tenderness and swelling post-surgery but this is usually improved as the surgery heals. Your dentist will give you the correct advice after your treatment.",
+      },
+      {
+        question: "How long will my treatment take?",
+        answer: "Your treatment time will depend on the condition of your bone, healing and individual needs. Once your dental implant has been placed you will need some healing time for your bone to fuse with the dental implant. Some patients may require extra treatments such as bone grafts.",
+      },
+      {
+        question: "Where can I find a reputable dental implant clinic near me in Jaipur?",
+        answer: "Look at the dentist's experience, diagnostic equipment, treatment planning, hygiene and patient care. Riddhi Siddhi Dental Hospital in Vaishali Nagar, Jaipur can provide you with a dental consultation to see if you have any missing teeth and suitable dental implant treatments.",
+      },
+      {
+        question: "How long will my dental implants last?",
+        answer: "With correct care your dental implants can last many years. Keeping your mouth clean, brushing twice a day, cleaning between your teeth and visiting your dentist regularly will help keep your gums and bone healthy around the implant. You should also avoid using tobacco products and follow your dentist's advice.",
+      },
+    ],
+    buttons: [
+      { label: "Book Your Consultation Now", href: "/contact", type: "link" },
+      { label: "Call Now", href: "tel:+917737129368", type: "phone" },
     ],
     metaTitle: "Dental Implants in Jaipur | Riddhi Siddhi Dental Hospital",
     metaDescription: "Searching for a dental implant clinic in Jaipur? Riddhi Siddhi Dental Hospital shares information about dental implants. Contact us to discuss your needs.",
@@ -96,16 +132,48 @@ export const services: Service[] = [
     id: 3,
     slug: "clear-aligners",
     title: "Clear Aligners",
+    bannerTitle: "Clear Aligner Treatment in Jaipur for a Straighter, Confident Smile",
+    contentHeading: "Clear Aligner Treatment in Jaipur",
+    benefitsHeading: "Why Choose Clear Aligner Treatment?",
+    sidebarHeading: "Book Your Clear Aligner Consultation",
+    sidebarText: "If you are looking for straighter teeth, then clear aligners can help. Visit Riddhi Siddhi Dental Hospital, Vaishali Nagar, Jaipur to learn more about clear aligners. Book your consultation today to find out what treatment is right for you.",
     icon: Smile,
     image: serviceAligners,
     description: "Find out more about clear, removable aligners that will slowly help to improve any issues concerning your teeth positioning.",
-    details: "Clear aligners are custom-made, transparent plastic trays that gradually straighten your teeth without metal braces. They are virtually invisible, removable, and comfortable. Each set of aligners is worn for about two weeks before progressing to the next set in the series.",
+    details: "Riddhi Siddhi Dental Hospital offers clear aligner treatments at Vaishali Nagar, Jaipur. A clear aligner is a transparent custom-fitted tray that can help you get perfectly aligned teeth without using traditional metal braces. These are easily removed clear trays that can be worn anywhere. We assess your teeth alignment and smile goals to provide you with a suitable treatment plan to give you perfectly aligned, health looking teeth.",
     benefits: [
-      "Nearly invisible appearance",
-      "Removable for eating and cleaning",
-      "No dietary restrictions",
-      "Fewer dental visits required",
-      "Comfortable with no metal brackets",
+      "Near invisible so you can straighten your teeth discreetly.",
+      "The aligners are removable so you can eat and clean easily.",
+      "No metal parts.",
+      "Personalised to the shape of your teeth.",
+      "Easy to clean.",
+      "Comfortable and convenient.",
+    ],
+    faqs: [
+      {
+        question: "What are clear aligners?",
+        answer: "Clear aligners are a type of transparent tray that is made specifically for your teeth. This allows your teeth to be moved gradually into the desired position. They are an invisible option to traditional metal braces. They can assist with some alignment issues such as crowded teeth, spaces between teeth and minor to moderate bite issues. Your treatment will be tailored to your teeth.",
+      },
+      {
+        question: "Are clear aligners better than traditional braces?",
+        answer: "Clear aligners have many benefits over traditional braces. They are nearly invisible and can be taken out. They are easier to clean (brush and floss). However, traditional braces may be a better option for some complex alignment and bite issues. It depends on your teeth and what you want to achieve.",
+      },
+      {
+        question: "How long will my treatment take?",
+        answer: "This depends on how complicated your teeth movement is. Some people only need a few months of treatment. Others may require longer. If you follow the instructions with wearing your aligners and attend your appointments you will be on track.",
+      },
+      {
+        question: "How long should I wear my aligners?",
+        answer: "Generally, you will need to wear your aligners for around 20-22 hours per day. Please follow your dentists instructions. Usually you will need to remove them when eating, drinking (other than water) and brushing your teeth. If you consistently wear your aligners you will achieve the desired tooth movements.",
+      },
+      {
+        question: "Where can I get clear aligners near me in Jaipur?",
+        answer: "If you are looking for clear aligner treatment near me or invisible braces treatment in Jaipur, Riddhi Siddhi Dental Hospital in Vaishali Nagar can provide you with a dental consultation. We can assess your teeth alignment and discuss the best treatment options for you. Come along to see us so we can advise you on what treatment you will need and how we can provide you with a personalised approach to give you a straighter smile.",
+      },
+    ],
+    buttons: [
+      { label: "Schedule a Consultation", href: "/contact", type: "link" },
+      { label: "Call Now", href: "tel:+917737129368", type: "phone" },
     ],
     metaTitle: "Clear Aligner Services in Jaipur | Riddhi Siddhi Dental Hospital",
     metaDescription: "Considering clear aligner treatment in Jaipur? Riddhi Siddhi Dental Hospital offers transparent, removable aligners. Contact us to arrange a consultation today.",
@@ -114,16 +182,48 @@ export const services: Service[] = [
     id: 4,
     slug: "smile-designing",
     title: "Smile Designing",
+    bannerTitle: "Smile Designing in Jaipur for a Beautiful, Confident Smile",
+    contentHeading: "Smile Designing in Jaipur",
+    benefitsHeading: "Why Choose Smile Designing?",
+    sidebarHeading: "Book Your Smile Designing Consultation",
+    sidebarText: "Wish to improve your smile? Get customised smile designing services from Riddhi Siddhi Dental Hospital situated in Vaishali Nagar, Jaipur. Schedule an appointment to know about the best treatment options that can help you achieve your desired smile.",
     icon: Palette,
     image: serviceSmile,
     description: "Find out more about dental treatments that can help improve the appearance of your teeth including shape, colour, positioning and your smile. ",
-    details: "Smile designing is a comprehensive approach to improving the aesthetics of your smile through one or more cosmetic dentistry procedures. We analyze your facial features, tooth color, shape, size, and arrangement to create a customized treatment plan that gives you the smile you've always wanted.",
+    details: "Riddhi Siddhi Dental Hospital, Vaishali Nagar, Jaipur provides personalized smile design services. We take into account your facial features, shape, size, color and positioning of teeth to help you achieve your desired smile. Depending on your dental requirements, Smile design can include aesthetic procedures such as teeth whitening, veneers, crowns etc. to improve the look of your smile and increase your confidence.",
     benefits: [
-      "Customized treatment plan",
-      "Improved facial aesthetics",
-      "Boost in confidence",
-      "Long-lasting results",
-      "Combination of multiple procedures",
+      "Personalised treatment plans",
+      "Improved shape, shade and positioning of teeth",
+      "Improved smile and facial aesthetics",
+      "A variety of cosmetic dental treatments",
+      "Increased confidence and self-esteem with your smile",
+      "Treatments specific to your dental requirements",
+    ],
+    faqs: [
+      {
+        question: "What is Smile designing?",
+        answer: "Smile designing refers to a personal cosmetic dentistry treatment that can help you improve your smile. This treatment can benefit people with discolored, chipped, crooked, out-of-proportion, or irregular-shaped teeth. During a consultation with your dentist, they will be able to establish what treatments would be suitable for your smile.",
+      },
+      {
+        question: "What treatments are used during smile designing?",
+        answer: "During Smile Designing, you may have one or more cosmetic dental treatments. Some popular treatments include teeth whitening, veneers, crowns, tooth-colored fillings, and orthodontics. Your dentist will assess your teeth, gums, and facial features to provide you with a suitable smile makeover treatment.",
+      },
+      {
+        question: "How long does Smile Designing take?",
+        answer: "This depends on the treatments being performed and the complexity of your dental issues. Some treatments like teeth whitening can be completed in less time, whilst veneers, crowns, or orthodontics can take longer. Your dentist will be able to advise you on how long your treatment should last during your consultation.",
+      },
+      {
+        question: "How much does a Smile Makeover treatment cost in Jaipur?",
+        answer: "The cost of a smile makeover treatment can vary depending on how many teeth are being treated, what treatments are needed, what materials are used, and the complexity of the treatment. During a consultation with your dentist we can establish what your requirements are and provide you with a personal treatment plan.",
+      },
+      {
+        question: "Where can I get Smile designing near me in Jaipur?",
+        answer: "Riddhi Siddhi Dental Hospital in Vaishali Nagar offers consultations to patients who are looking to enhance their smiles. Come into our dental hospital to discuss your concerns, see what cosmetic treatments are suitable for you, and find out what personal smile makeover treatments you can have.",
+      },
+    ],
+    buttons: [
+      { label: "Book Your Consultation", href: "/contact", type: "link" },
+      { label: "Call Now", href: "tel:+917737129368", type: "phone" },
     ],
     metaTitle: "Smile Designing Service in Jaipur | Riddhi Siddhi Dental Hospital",
     metaDescription: "Looking for smile designing services in Jaipur? Riddhi Siddhi Dental Hospital offers personalized planning to enhance smile aesthetics. Book a consultation.",
@@ -362,4 +462,4 @@ export const services: Service[] = [
     metaTitle: "Kids Dentistry in Jaipur | Riddhi Siddhi Dental Hospital",
     metaDescription: "Explore Kids Dentistry in Jaipur at Riddhi Siddhi Dental Hospital. Learn about care for children and contact us to discuss your child's dental needs today.",
   }
-];
+]
