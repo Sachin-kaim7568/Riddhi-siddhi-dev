@@ -99,9 +99,9 @@ const Gallery = () => {
               Image Gallery
             </span>
 
-            <h2 className="font-heading font-bold text-2xl md:text-4xl text-primary mb-3 uppercase tracking-tight">
+            <h1 className="font-heading font-bold text-2xl md:text-4xl text-primary mb-3 uppercase tracking-tight">
               Transformations Through Expertise
-            </h2>
+            </h1>
 
             <p className="text-muted-foreground text-base md:text-lg mb-0 leading-relaxed max-w-2xl mx-auto">
               Experience the power of skilled dental care. Our gallery
