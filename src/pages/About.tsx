@@ -45,9 +45,9 @@ const About = () => {
 
             {/* Right side: Content and Stats */}
             <div className="w-full lg:w-7/12 mt-16 lg:mt-0 flex flex-col justify-center">
-              <h2 className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl text-[#1e2a3b] mb-6 leading-tight uppercase mt-8">
+              <h1 className="font-heading font-bold text-2xl md:text-3xl lg:text-4xl text-[#1e2a3b] mb-6 leading-tight uppercase mt-8">
                 DRIVEN BY CARE, TRUSTED BY FAMILIES IN JAIPUR
-              </h2>
+              </h1>
 
               <div className="space-y-4 text-muted-foreground leading-relaxed mb-8 text-justify text-sm md:text-base">
                 <p>
