@@ -36,7 +36,7 @@ const App = () => (
           <div className="flex flex-col min-h-screen">
             <Navbar />
             <FloatingAppointmentButton />
-            <main className="flex-1 flex flex-col">
+            <main className="flex-1">
               <Suspense
                 fallback={
                   <div className="flex-1 min-h-[50vh] flex items-center justify-center">

@@ -1,4 +1,5 @@
 import { Activity, Sparkles, Smile, Palette, Scissors, Brush, Layers, Hammer, Sun, HeartPulse, ShieldAlert, Stethoscope, AlignJustify, Zap, Baby } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import serviceRct from "@/assets/service-rct.jpg";
 import serviceImplants from "@/assets/service-implants.jpg";
 import serviceAligners from "@/assets/service-aligners.jpg";
@@ -7,22 +8,68 @@ import Dental from "@/assets/Dental.png";
 import Porcelain from "@/assets/Porcelain.png";
 import Smiles from "@/assets/Smiles.png";
 
+export interface Service {
+  id: number;
+  slug: string;
+  title: string;
+  icon: LucideIcon;
+  image: string;
+  description: string;
+  details: string;
+  benefits: string[];
+  metaTitle: string;
+  metaDescription: string;
+  bannerTitle?: string;
+  contentHeading?: string;
+  benefitsHeading?: string;
+  sidebarHeading?: string;
+  sidebarText?: string;
+  faqs?: { question: string; answer: string }[];
+}
 
-export const services = [
+export const services: Service[] = [
   {
     id: 1,
     slug: "root-canal-treatment",
     title: "Root Canal Treatment",
+    bannerTitle: "Root Canal Treatment in Jaipur for Healthy, Pain-Free Smiles",
+    contentHeading: "Root Canal Treatment in Jaipur",
+    benefitsHeading: "Why choose root canal treatment?",
+    sidebarHeading: "Book Your Root Canal Consultation",
+    sidebarText: "If you are experiencing tooth pains and sensitivities, come to Riddhi Siddhi Dental Hospital in Vaishali Nagar, Jaipur to get professional dental care. Our friendly team can offer you a comfortable root canal treatment.",
     icon: Activity,
     image: serviceRct,
     description: "Treatment to resolve infection and/or damage to your tooth. This can help to save your tooth.",
-    details: "Our pain-free RCT procedures use the latest techniques and equipment to save your natural teeth. We ensure complete removal of infection while preserving tooth structure, followed by proper sealing and restoration. The procedure is performed under local anesthesia with minimal discomfort.",
+    details: "At Riddhi Siddhi Dental Hospital we offer root canal treatments at Jaipur to alleviate tooth pain and prevent infections. We remove the infected pulp from the root of the tooth. Then carefully clean and sterilize the root canal. After which we seal the tooth. Our treatments are done under local anaesthetic so you are comfortable during treatment. The tooth will then be restored appropriately.",
     benefits: [
-      "Pain-free procedure with modern anesthesia",
-      "Preservation of natural tooth",
-      "Prevention of infection spread",
-      "Long-lasting results",
-      "Same-day emergency treatment available",
+      "Provides relief from pain caused by tooth infection.",
+      "Protects your natural tooth.",
+      "Infected pulp and bacteria removed.",
+      "Helps prevent infection spreading.",
+      "Restore tooth functionality to allow you to chew.",
+      "Improves long term oral health through proper restoration.",
+    ],
+    faqs: [
+      {
+        question: "When would you recommend a root canal treatment?",
+        answer: "It is recommended when the inner pulp of a tooth gets infected or damaged because of severe tooth decay, fractures, trauma or multiple dental treatments. Patients often have symptoms such as continuous toothache, sensitivity to hot or cold, swelling and pain while chewing. It is best to see your dentist early to identify the correct treatment.",
+      },
+      {
+        question: "Is root canal treatment painful?",
+        answer: "Root canal treatment is done under local anaesthetic so there should be little to no pain during the treatment. Some patients may feel some mild discomfort or sensitivity for a few days after the treatment. Your dentist will give you the correct advice.",
+      },
+      {
+        question: "How many appointments would I need?",
+        answer: "The number of appointments will depend on how bad the infection is, how complicated the roots are and what treatment is needed. Some patients may only require one appointment whereas others may require more than one appointment.",
+      },
+      {
+        question: "How long would a root canal treated tooth last?",
+        answer: "With correct restorations, good oral hygiene and regular check-ups your root canal treated tooth can last many years. Depending on the condition of your tooth a crown may be recommended to protect it from breaking.",
+      },
+      {
+        question: "How can I find the right root canal dentist in Jaipur?",
+        answer: "When looking for a root canal dentist in Jaipur look at their experience, what treatment they offer, what diagnostic equipment they have and how they treat their patients. At Riddhi Siddhi Dental Hospital in Vaishali Nagar, Jaipur our dental team can talk through your condition with you and help you find the right root canal treatment for you.",
+      },
     ],
     metaTitle: "Root Canal Dentist in Jaipur | Riddhi Siddhi Dental Hospital",
     metaDescription: "Looking for a root canal dentist in Jaipur? Riddhi Siddhi Dental Hospital can help you, explore treatment for an infected or painful tooth. Book today.",
@@ -313,6 +360,6 @@ export const services = [
       "Reduces dental anxiety in kids",
     ],
     metaTitle: "Kids Dentistry in Jaipur | Riddhi Siddhi Dental Hospital",
-    metaDescription: "Explore Kids Dentistry in Jaipur at Riddhi Siddhi Dental Hospital. Learn about care for children and contact us to discuss your child’s dental needs today.",
+    metaDescription: "Explore Kids Dentistry in Jaipur at Riddhi Siddhi Dental Hospital. Learn about care for children and contact us to discuss your child's dental needs today.",
   }
 ];
