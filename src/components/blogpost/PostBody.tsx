@@ -5,7 +5,7 @@ const LinkText = ({ text }: { text: string }) => (
   <>
     {parseLinks(text).map((part, i) =>
       part.href ? (
-        <a key={i} href={part.href}>
+       <a key={i} className="post-link" href={part.href}>
           {part.text}
         </a>
       ) : (
