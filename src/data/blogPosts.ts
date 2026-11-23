@@ -59,7 +59,7 @@ export const blogPosts: BlogPostData[] = [
         type: "p",
         // lead: true,
         text:
-          "Finding the best dental hospital in Vaishali Nagar can help you keep your teeth and gums healthy. Whether you are suffering from a tooth ache, bleeding gums, sensitive teeth or cavities, choosing the right dental hospital can help you feel more comfortable when receiving treatment.",
+          "Finding the [best dental hospital in Vaishali Nagar](https://riddhisiddhidentalhospital.com/) can help you keep your teeth and gums healthy. Whether you are suffering from a tooth ache, bleeding gums, sensitive teeth or cavities, choosing the right dental hospital can help you feel more comfortable when receiving treatment.",
       },
       {
         type: "p",
@@ -156,16 +156,16 @@ export const blogPosts: BlogPostData[] = [
       {
         type: "ul",
         items: [
-          { b: "RCT treatments in Jaipur – ", t: "Root canal treatment may help save your tooth if the pulp has become inflamed or infected." },
-          { b: "Dental Implants in Jaipur – ", t: "If your bone health, gums and are suitable then dental implants may be an option." },
-          { b: "Clear Aligner services in Jaipur – ", t: "Aligners can be used to correct specific issues with your teeth using clear removable aligners." },
-          { b: "Braces in Jaipur – ", t: "Braces can be used to correct a variety of issues with your teeth. This will be done under the supervision of an orthodontist." },
-          { b: "Fillings – ", t: "Your dentist can use the right filling to repair your teeth." },
-          { b: "Scaling in Jaipur – ", t: "Scaling is a professional treatment to remove plaque and hardened deposits which cannot be fully removed by brushing." },
-          { b: "Crowns in Jaipur – ", t: "Crowns can be used to protect and repair a weak, broken or heavily restored tooth." },
-          { b: "Whitening – ", t: "Whitening can be carried out professionally to improve certain types of tooth discolouration. This will depend on an examination of your mouth." },
-          { b: "Smile Designing in Jaipur – ", t: "Cosmetic treatments can be planned to improve the appearance of your teeth." },
-          { b: "Painless Dentistry for Kids – ", t: "Child friendly dental treatments will be carried out with communication at the correct level for children. Preventative treatments will be carried out and techniques to reduce any pain or anxiety." },
+          { b: "RCT treatments in Jaipur – ", t: "[Root canal treatment](https://riddhisiddhidentalhospital.com/services/root-canal-treatment) may help save your tooth if the pulp has become inflamed or infected." },
+          { b: "[Dental Implants in Jaipur](https://riddhisiddhidentalhospital.com/services/dental-implants) – ", t: "If your bone health, gums and are suitable then dental implants may be an option." },
+          { b: "[Clear Aligner services in Jaipur](https://riddhisiddhidentalhospital.com/services/clear-aligners) – ", t: "Aligners can be used to correct specific issues with your teeth using clear removable aligners." },
+          { b: "[Braces in Jaipur](https://riddhisiddhidentalhospital.com/services/orthodontic-braces) – ", t: "Braces can be used to correct a variety of issues with your teeth. This will be done under the supervision of an orthodontist." },
+          { b: "[Fillings](https://riddhisiddhidentalhospital.com/services/dental-fillings) – ", t: "Your dentist can use the right filling to repair your teeth." },
+          { b: "[Scaling in Jaipur](https://riddhisiddhidentalhospital.com/services/scaling-polishing) – ", t: "Scaling is a professional treatment to remove plaque and hardened deposits which cannot be fully removed by brushing." },
+          { b: "[Crowns in Jaipur](https://riddhisiddhidentalhospital.com/services/crowns-bridges) – ", t: "Crowns can be used to protect and repair a weak, broken or heavily restored tooth." },
+          { b: "[Whitening](https://riddhisiddhidentalhospital.com/services/teeth-whitening) – ", t: "Whitening can be carried out professionally to improve certain types of tooth discolouration. This will depend on an examination of your mouth." },
+          { b: "[Smile Designing in Jaipur](https://riddhisiddhidentalhospital.com/services/smile-designing) – ", t: "Cosmetic treatments can be planned to improve the appearance of your teeth." },
+          { b: "[Painless Dentistry for Kids](https://riddhisiddhidentalhospital.com/services/kids-dentistry) – ", t: "Child friendly dental treatments will be carried out with communication at the correct level for children. Preventative treatments will be carried out and techniques to reduce any pain or anxiety." },
         ],
       },
       {
@@ -403,3 +403,27 @@ export const blogPosts: BlogPostData[] = [
 
 export const getPostBySlug = (slug?: string) =>
   blogPosts.find((p) => p.slug === slug);
+
+export type TextPart = { text: string; href?: string };
+
+// Splits "[label](url)" links out of a text string
+export const parseLinks = (text: string): TextPart[] => {
+  const parts: TextPart[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > last) {
+      parts.push({ text: text.slice(last, match.index) });
+    }
+    parts.push({ text: match[1], href: match[2] });
+    last = regex.lastIndex;
+  }
+
+  if (last < text.length) {
+    parts.push({ text: text.slice(last) });
+  }
+
+  return parts;
+};

@@ -1,11 +1,29 @@
-import type { BlogPostData, ListItem } from "@/data/blogPosts";
+import { Fragment } from "react";
+import { parseLinks, type BlogPostData, type ListItem } from "@/data/blogPosts";
+
+const LinkText = ({ text }: { text: string }) => (
+  <>
+    {parseLinks(text).map((part, i) =>
+      part.href ? (
+        <a key={i} href={part.href}>
+          {part.text}
+        </a>
+      ) : (
+        <Fragment key={i}>{part.text}</Fragment>
+      )
+    )}
+  </>
+);
 
 const renderItem = (it: ListItem) =>
   typeof it === "string" ? (
-    it
+    <LinkText text={it} />
   ) : (
     <>
-      <strong>{it.b}</strong> {it.t}
+      <strong>
+        <LinkText text={it.b} />
+      </strong>{" "}
+      <LinkText text={it.t} />
     </>
   );
 
@@ -16,7 +34,7 @@ const PostBody = ({ post }: { post: BlogPostData }) => (
         case "p":
           return (
             <p key={i} className={b.lead ? "lead-p" : undefined}>
-              {b.text}
+              <LinkText text={b.text} />
             </p>
           );
         case "h2":
