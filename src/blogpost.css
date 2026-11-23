@@ -51,6 +51,16 @@
 .rsp-page .article ul li { position: relative; padding-left: 30px; }
 .rsp-page .article ul li::before { content: ""; position: absolute; left: 4px; top: .7em; width: 10px; height: 10px; border-radius: 50%; background: var(--teal); box-shadow: 0 0 0 4px var(--teal-soft); }
 
+.rsp-page .post-link {
+  color: var(--gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rsp-page .post-link:hover {
+  color: var(--teal);
+}
+
 /* reveal */
 .rsp-page .reveal { opacity: 0; transform: translateY(30px); transition: .8s; }
 .rsp-page .reveal.show { opacity: 1; transform: none; }
